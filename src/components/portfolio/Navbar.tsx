@@ -38,7 +38,7 @@ export const Navbar = () => {
     >
       <div className="container-custom flex items-center justify-between h-20 px-4 md:px-8">
         <a href="#home" className="font-heading font-bold text-2xl text-primary">
-          Thenith<span className="text-foreground">.</span>
+          Thenith<span className="text-foreground"> Ranjan</span>
         </a>
 
         {/* Desktop Navigation */}
