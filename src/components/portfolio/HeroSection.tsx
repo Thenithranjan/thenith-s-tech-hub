@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const HeroSection = () => {
   return (
@@ -124,7 +123,7 @@ export const HeroSection = () => {
               {/* Image container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-background shadow-2xl">
                 <img
-                  src={profilePhoto}
+                  src="https://i.postimg.cc/MTjm4f1H/Chat-GPT-Image-Dec-10-2025-07-15-37-PM.png"
                   alt="Thenith Ranjan P S"
                   className="w-full h-full object-cover"
                 />
