@@ -31,7 +31,7 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/thenith-ranjan-p-s-430aa0312",
+    href: "https://www.linkedin.com/in/thenith-ranjan-p-s",
   },
   {
     icon: Github,
