@@ -7,7 +7,7 @@ const technicalSkills = [
   { name: "JavaScript", level: 82 },
   { name: "MySQL", level: 75 },
   { name: "Spring Boot", level: 70 },
-  { name: "Python", level: 65 },
+  { name: "Python", level: 90 },
 ];
 
 const tools = [
