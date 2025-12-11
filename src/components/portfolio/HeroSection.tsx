@@ -1,14 +1,13 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Github, Linkedin, Mail, X } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ArrowRight, Download, Github, Linkedin, Mail, Eye } from "lucide-react";
 
 export const HeroSection = () => {
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const handleViewResume = () => {
+    window.open("/resume/Thenith_Ranjan_Resume.pdf", "_blank");
+  };
 
   return (
-    <>
     <section id="home" className="min-h-screen hero-gradient relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
@@ -70,8 +69,8 @@ export const HeroSection = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4 mb-8"
             >
-              <Button variant="hero" size="lg" onClick={() => setIsResumeOpen(true)}>
-                <Download className="mr-2 h-5 w-5" />
+              <Button variant="hero" size="lg" onClick={handleViewResume}>
+                <Eye className="mr-2 h-5 w-5" />
                 View Resume
               </Button>
               <Button variant="heroOutline" size="lg">
@@ -176,30 +175,5 @@ export const HeroSection = () => {
         </div>
       </motion.div>
     </section>
-
-      {/* Resume Dialog */}
-      <Dialog open={isResumeOpen} onOpenChange={setIsResumeOpen}>
-        <DialogContent className="max-w-4xl h-[90vh] p-0">
-          <DialogHeader className="p-4 border-b border-border flex flex-row items-center justify-between">
-            <DialogTitle className="text-lg font-semibold">Resume - Thenith Ranjan P S</DialogTitle>
-            <div className="flex gap-2">
-              <Button variant="hero" size="sm" asChild>
-                <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download
-                </a>
-              </Button>
-            </div>
-          </DialogHeader>
-          <div className="flex-1 h-full">
-            <iframe
-              src="/resume/Thenith_Ranjan_Resume.pdf"
-              className="w-full h-[calc(90vh-80px)]"
-              title="Resume"
-            />
-          </div>
-        </DialogContent>
-      </Dialog>
-    </>
   );
 };
