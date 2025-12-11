@@ -52,8 +52,10 @@ export const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="hero" size="sm">
-            Download CV
+          <Button variant="hero" size="sm" asChild>
+            <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
+              Download CV
+            </a>
           </Button>
         </div>
 
@@ -86,8 +88,10 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="hero" className="w-full mt-2">
-                Download CV
+              <Button variant="hero" className="w-full mt-2" asChild>
+                <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
+                  Download CV
+                </a>
               </Button>
             </div>
           </motion.div>
