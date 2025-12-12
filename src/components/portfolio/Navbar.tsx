@@ -10,8 +10,8 @@ const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  { name: "Services", href: "#services" },
   { name: "Achievements", href: "#achievements" },
+  { name: "Services", href: "#services" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -60,6 +60,11 @@ export const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <Button variant="hero" size="sm" asChild>
+            <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
+              Download CV
+            </a>
+          </Button>
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
@@ -67,11 +72,6 @@ export const Navbar = () => {
           >
             {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
           </button>
-          <Button variant="hero" size="sm" asChild>
-            <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
-              Download CV
-            </a>
-          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -104,6 +104,11 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="flex items-center gap-4 mt-2">
+                <Button variant="hero" className="flex-1" asChild>
+                  <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
+                    Download CV
+                  </a>
+                </Button>
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
@@ -111,11 +116,6 @@ export const Navbar = () => {
                 >
                   {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
                 </button>
-                <Button variant="hero" className="flex-1" asChild>
-                  <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
-                    Download CV
-                  </a>
-                </Button>
               </div>
             </div>
           </motion.div>
