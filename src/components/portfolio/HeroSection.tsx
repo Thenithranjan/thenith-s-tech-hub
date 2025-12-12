@@ -5,7 +5,8 @@ import { ArrowRight, Download, Github, Linkedin, Mail, Eye, X } from "lucide-rea
 
 export const HeroSection = () => {
   const [showResume, setShowResume] = useState(false);
-  const resumeUrl = "/resume/Thenith_Ranjan_Resume.pdf";
+  const resumeImageUrl = "https://i.postimg.cc/L6Cm0DDv/RESUME-1.png";
+  const resumePdfUrl = "/resume/Thenith_Ranjan_Resume.pdf";
 
   return (
     <>
@@ -205,7 +206,7 @@ export const HeroSection = () => {
                 <h3 className="font-semibold text-foreground">Resume - Thenith Ranjan P S</h3>
                 <div className="flex items-center gap-2">
                   <Button variant="hero" size="sm" asChild>
-                    <a href={resumeUrl} download="Thenith_Ranjan_Resume.pdf">
+                    <a href={resumePdfUrl} download="Thenith_Ranjan_Resume.pdf">
                       <Download className="mr-2 h-4 w-4" />
                       Download
                     </a>
@@ -221,25 +222,13 @@ export const HeroSection = () => {
                 </div>
               </div>
               
-              {/* PDF Viewer */}
-              <div className="h-[calc(90vh-72px)]">
-                <object
-                  data={resumeUrl}
-                  type="application/pdf"
-                  className="w-full h-full"
-                >
-                  <div className="flex flex-col items-center justify-center h-full gap-4 p-8 text-center">
-                    <p className="text-muted-foreground">
-                      Unable to display PDF. Your browser may be blocking it.
-                    </p>
-                    <Button variant="hero" asChild>
-                      <a href={resumeUrl} download="Thenith_Ranjan_Resume.pdf">
-                        <Download className="mr-2 h-4 w-4" />
-                        Download Resume Instead
-                      </a>
-                    </Button>
-                  </div>
-                </object>
+              {/* Resume Image Viewer */}
+              <div className="h-[calc(90vh-72px)] overflow-auto p-4 flex items-start justify-center bg-muted/30">
+                <img
+                  src={resumeImageUrl}
+                  alt="Resume - Thenith Ranjan P S"
+                  className="max-w-full h-auto rounded-lg shadow-lg"
+                />
               </div>
             </motion.div>
           </motion.div>
