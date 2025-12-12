@@ -74,7 +74,13 @@ export const HeroSection = () => {
                   <Eye className="mr-2 h-5 w-5" />
                   View Resume
                 </Button>
-                <Button variant="heroOutline" size="lg">
+                <Button 
+                  variant="heroOutline" 
+                  size="lg"
+                  onClick={() => {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Contact Me
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
