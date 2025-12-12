@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -10,12 +11,19 @@ const navLinks = [
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Services", href: "#services" },
+  { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" },
 ];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,6 +60,13 @@ export const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
+          </button>
           <Button variant="hero" size="sm" asChild>
             <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
               Download CV
@@ -88,11 +103,20 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="hero" className="w-full mt-2" asChild>
-                <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
-                  Download CV
-                </a>
-              </Button>
+              <div className="flex items-center gap-4 mt-2">
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
+                </button>
+                <Button variant="hero" className="flex-1" asChild>
+                  <a href="/resume/Thenith_Ranjan_Resume.pdf" download="Thenith_Ranjan_Resume.pdf">
+                    Download CV
+                  </a>
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
