@@ -84,9 +84,12 @@ export const ProjectsSection = () => {
                   </Button>
                 </div>
               </div>
-              <div className="relative h-64 lg:h-80 bg-gradient-to-br from-primary/20 to-purple-medium/20 rounded-2xl overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-                <div className="text-6xl">🏛️</div>
+              <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden">
+                <img
+                  src="https://i.postimg.cc/BbyPs3s6/image.png"
+                  alt="Smart India Hackathon 2025 - Sikkim Monasteries Project"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </motion.div>
