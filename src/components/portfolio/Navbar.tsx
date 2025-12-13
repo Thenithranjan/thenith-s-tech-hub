@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -18,12 +17,28 @@ const navLinks = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Check saved theme on mount
   useEffect(() => {
-    setMounted(true);
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
   }, []);
+
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,11 +81,12 @@ export const Navbar = () => {
             </a>
           </Button>
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
-            aria-label="Toggle theme"
+            onClick={toggleTheme}
+            className="theme-toggle-btn"
+            aria-label="Toggle dark mode"
           >
-            {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
+            <span style={{ display: isDarkMode ? "inline" : "none" }}>🌞</span>
+            <span style={{ display: isDarkMode ? "none" : "inline" }}>🌙</span>
           </button>
         </div>
 
@@ -110,11 +126,12 @@ export const Navbar = () => {
                   </a>
                 </Button>
                 <button
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
-                  aria-label="Toggle theme"
+                  onClick={toggleTheme}
+                  className="theme-toggle-btn"
+                  aria-label="Toggle dark mode"
                 >
-                  {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
+                  <span style={{ display: isDarkMode ? "inline" : "none" }}>🌞</span>
+                  <span style={{ display: isDarkMode ? "none" : "inline" }}>🌙</span>
                 </button>
               </div>
             </div>
