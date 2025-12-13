@@ -85,8 +85,8 @@ export const Navbar = () => {
             className="theme-toggle-btn"
             aria-label="Toggle dark mode"
           >
-            <span style={{ display: isDarkMode ? "inline" : "none" }}>🌞</span>
-            <span style={{ display: isDarkMode ? "none" : "inline" }}>🌙</span>
+            <span style={{ display: isDarkMode ? "none" : "inline" }}>🌞</span>
+            <span style={{ display: isDarkMode ? "inline" : "none" }}>🌙</span>
           </button>
         </div>
 
@@ -130,8 +130,8 @@ export const Navbar = () => {
                   className="theme-toggle-btn"
                   aria-label="Toggle dark mode"
                 >
-                  <span style={{ display: isDarkMode ? "inline" : "none" }}>🌞</span>
-                  <span style={{ display: isDarkMode ? "none" : "inline" }}>🌙</span>
+                  <span style={{ display: isDarkMode ? "none" : "inline" }}>🌞</span>
+                  <span style={{ display: isDarkMode ? "inline" : "none" }}>🌙</span>
                 </button>
               </div>
             </div>
