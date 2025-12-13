@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,6 +18,44 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Smooth scroll function with easing
+  const smoothScrollTo = useCallback((targetId: string) => {
+    const element = document.querySelector(targetId);
+    if (!element) return;
+
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY - 80;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1000;
+    let startTime: number | null = null;
+
+    // Easing function for smooth animation
+    const easeInOutCubic = (t: number): number => {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    };
+
+    const animation = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+      
+      window.scrollTo(0, startPosition + distance * easedProgress);
+      
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    smoothScrollTo(href);
+    setIsMobileMenuOpen(false);
+  };
 
   // Check saved theme on mount
   useEffect(() => {
@@ -60,7 +98,11 @@ export const Navbar = () => {
       }`}
     >
       <div className="container-custom flex items-center justify-between h-20 px-4 md:px-8">
-        <a href="#home" className="font-heading font-bold text-2xl text-primary">
+        <a 
+          href="#home" 
+          onClick={(e) => handleNavClick(e, "#home")}
+          className="font-heading font-bold text-2xl text-primary"
+        >
           Thenith<span className="text-primary"> Ranjan</span>
         </a>
 
@@ -70,6 +112,7 @@ export const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
             >
               {link.name}
@@ -113,7 +156,7 @@ export const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="py-2 text-foreground/80 hover:text-primary transition-colors"
                 >
                   {link.name}
