@@ -62,41 +62,45 @@
 
   .dark {
     --background: 240 10% 6%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 95%;
 
     --card: 240 10% 10%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 0 0% 95%;
 
     --popover: 240 10% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 262 83% 65%;
+    --primary: 262 83% 70%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 262 30% 20%;
-    --secondary-foreground: 262 50% 90%;
+    --secondary: 262 30% 25%;
+    --secondary-foreground: 0 0% 95%;
 
     --muted: 240 5% 18%;
-    --muted-foreground: 240 5% 65%;
+    --muted-foreground: 240 5% 75%;
 
-    --accent: 262 83% 65%;
+    --accent: 262 83% 70%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5% 20%;
-    --input: 240 5% 20%;
-    --ring: 262 83% 65%;
+    --border: 240 5% 25%;
+    --input: 240 5% 25%;
+    --ring: 262 83% 70%;
 
     --sidebar-background: 240 10% 8%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 262 83% 65%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 262 83% 70%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 262 30% 20%;
-    --sidebar-accent-foreground: 262 50% 90%;
-    --sidebar-border: 240 5% 20%;
-    --sidebar-ring: 262 83% 65%;
+    --sidebar-accent: 262 30% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 5% 25%;
+    --sidebar-ring: 262 83% 70%;
+    
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(262, 30%, 12%) 0%, hsl(240, 10%, 6%) 50%, hsl(262, 25%, 10%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240, 10%, 12%) 0%, hsl(262, 20%, 10%) 100%);
   }
 }
 
