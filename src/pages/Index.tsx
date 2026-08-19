@@ -8,21 +8,48 @@ import { AchievementsSection } from "@/components/portfolio/AchievementsSection"
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { Footer } from "@/components/portfolio/Footer";
+import SwarmCursor from "@/components/ui/SwarmCursor";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <AchievementsSection />
-      <ServicesSection />
-      <ContactSection />
-      <Footer />
-    </main>
+    <div style={{ position: "relative" }}>
+      {/* SwarmCursor overlay — fixed full-screen, pointer-events-none so clicks pass through */}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 9999,
+          pointerEvents: "none",
+        }}
+      >
+        <SwarmCursor
+          color="#b71cd0"
+          accentColor="#de2de5"
+          count={6}
+          size={4}
+          speed={2.5}
+          spread={100}
+          wander={0.25}
+          trail={0.75}
+          scatterOnClick
+          className="w-full h-full"
+        />
+      </div>
+
+      {/* Page content */}
+      <main className="min-h-screen bg-background" style={{ position: "relative", zIndex: 1 }}>
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <AchievementsSection />
+        <ServicesSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </div>
   );
 };
 

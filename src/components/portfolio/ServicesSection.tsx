@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code, Globe, Database, Layers } from "lucide-react";
+import { Code, Globe, Database, Layers, Zap } from "lucide-react";
 
 const services = [
   {
@@ -15,16 +15,22 @@ const services = [
     features: ["Responsive Design", "Modern UI/UX", "Performance Optimization", "SEO Friendly"],
   },
   {
-    icon: Database,
-    title: "Database Solutions",
-    description: "Design and implementation of efficient database systems using MySQL and MongoDB for optimal performance.",
-    features: ["MySQL", "MongoDB", "Data Modeling", "Query Optimization"],
+    icon: Zap,
+    title: "MuleSoft Developer",
+    description: "Salesforce Certified MuleSoft Developer specializing in API-led connectivity, integration design, and building scalable Anypoint Platform solutions.",
+    features: ["Anypoint Platform", "API-Led Connectivity", "DataWeave", "Salesforce Integration"],
   },
   {
     icon: Layers,
     title: "Java Applications",
     description: "Desktop and console applications with robust architecture, clean code practices, and comprehensive functionality.",
     features: ["Java SE", "Swing GUI", "JDBC", "OOP Principles"],
+  },
+  {
+    icon: Database,
+    title: "Database Solutions",
+    description: "Design and implementation of efficient database systems using MySQL and MongoDB for optimal performance.",
+    features: ["MySQL", "MongoDB", "Data Modeling", "Query Optimization"],
   },
 ];
 

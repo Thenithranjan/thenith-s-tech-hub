@@ -12,6 +12,7 @@ const courses = [
 ];
 
 const certifications = [
+  { name: "MuleSoft Developer", issuer: "Salesforce", icon: "⚡" },
   { name: "Python Essentials", issuer: "Cisco", icon: "🐍" },
   { name: "MongoDB", issuer: "Cisco", icon: "🍃" },
   { name: "JAVA SE", issuer: "G-TEC Computer Education", icon: "☕" },
