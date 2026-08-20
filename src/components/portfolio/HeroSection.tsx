@@ -9,109 +9,132 @@ export const HeroSection = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+      setIsMobile(window.innerWidth < 768);
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
   const resumeImageUrl = "https://i.postimg.cc/L6Cm0DDv/RESUME-1.png";
   const resumePdfUrl = "/resume/Thenith_Ranjan_Resume.pdf";
 
-
   return (
     <>
-      <section id="home" className="min-h-screen hero-gradient relative overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-medium/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "-3s" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/5 to-transparent rounded-full" />
-        </div>
+      <section
+        id="home"
+        className="min-h-screen relative overflow-hidden flex flex-col justify-between"
+        style={{
+          backgroundImage: "url('/home-bg.png')",
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#e2d5ff",
+        }}
+      >
+        {/* Dark Mode Overlay ensuring high contrast & maximum text visibility */}
+        <div className="absolute inset-0 bg-transparent dark:bg-slate-950/75 dark:backdrop-blur-[2px] pointer-events-none transition-all duration-300 z-0" />
 
-        <div className="container-custom min-h-screen flex items-center pt-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center w-full px-4 md:px-8">
-            {/* Text Content */}
+        {/* Main Content Area */}
+        <div className="container-custom min-h-[calc(100vh-60px)] flex items-center pt-20 pb-8 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-8 items-center w-full px-4 md:px-8">
+            {/* Left Content Column */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="order-2 lg:order-1"
+              className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center"
             >
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
+              {/* Welcome Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium mb-6"
+                className="mb-5"
               >
-                👋 Welcome to my Portfolio
-              </motion.span>
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#e4d7fe]/90 dark:bg-purple-900/90 backdrop-blur-md text-[#3c17a6] dark:text-purple-100 rounded-full text-sm font-semibold shadow-md border border-purple-200/60 dark:border-purple-500/50">
+                  👋 Welcome to my Portfolio
+                </span>
+              </motion.div>
 
+              {/* Main Heading */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
+                className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4"
               >
-                Hello, I'm
+                Hello, I’m
                 <br />
-                <span className="gradient-text">Thenith Ranjan P S</span>
+                <span className="text-[#3c14b7] dark:text-[#b48aff] drop-shadow-sm font-extrabold">
+                  Thenith Ranjan P S
+                </span>
               </motion.h1>
 
+              {/* Role Subtitle */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-lg md:text-xl text-primary font-medium mb-4"
+                className="text-base sm:text-lg md:text-xl font-bold text-[#3c14b7] dark:text-[#c4a1ff] leading-snug mb-4"
               >
                 Full-Stack Developer | Web Developer | MuleSoft Developer | Tech Explorer
               </motion.p>
 
+              {/* Bio Paragraph */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="text-muted-foreground text-lg max-w-lg mb-8"
+                className="text-slate-700 dark:text-slate-200 text-base md:text-lg max-w-xl font-normal leading-relaxed mb-8"
               >
                 A passionate Computer Science student dedicated to creating innovative web solutions and exploring the latest in technology.
               </motion.p>
 
+              {/* Action Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="flex flex-wrap gap-4 mb-8"
+                className="flex flex-wrap items-center gap-4 mb-8"
               >
-                <Button variant="hero" size="lg" onClick={() => setShowResume(true)}>
+                <button
+                  onClick={() => setShowResume(true)}
+                  className="inline-flex items-center justify-center px-6 py-3.5 bg-[#4717cc] hover:bg-[#380fa8] dark:bg-[#6b2bf5] dark:hover:bg-[#5821d6] text-white text-base font-semibold rounded-2xl shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                >
                   <Eye className="mr-2 h-5 w-5" />
                   View Resume
-                </Button>
-                <Button
-                  variant="heroOutline"
-                  size="lg"
+                </button>
+
+                <button
                   onClick={() => {
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                   }}
+                  className="inline-flex items-center justify-center px-6 py-3.5 border-2 border-[#4717cc] dark:border-purple-400 text-[#4717cc] dark:text-purple-200 hover:bg-[#4717cc]/10 dark:hover:bg-purple-400/20 text-base font-semibold rounded-2xl transition-all duration-200"
                 >
                   Contact Me
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                </button>
               </motion.div>
 
+              {/* Social Links */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
                 className="flex items-center gap-4"
               >
-                <span className="text-sm text-muted-foreground">Follow me:</span>
-                <div className="flex gap-3">
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  Follow me:
+                </span>
+                <div className="flex items-center gap-3">
                   <a
                     href="https://linkedin.com/in/thenith-ranjan-p-s-430aa0312"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
+                    title="LinkedIn"
                   >
                     <Linkedin size={18} />
                   </a>
@@ -119,13 +142,15 @@ export const HeroSection = () => {
                     href="https://github.com/Thenithranjan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
+                    title="GitHub"
                   >
                     <Github size={18} />
                   </a>
                   <a
                     href="mailto:thenithranjan@gmail.com"
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
+                    title="Email"
                   >
                     <Mail size={18} />
                   </a>
@@ -133,7 +158,7 @@ export const HeroSection = () => {
                     href="https://leetcode.com/u/Thenithranjan/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
                     title="LeetCode"
                   >
                     <svg
@@ -150,67 +175,10 @@ export const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            {/* Profile Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="order-1 lg:order-2 flex justify-center"
-            >
-              <div className="relative">
-                {/* Decorative ring */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-purple-medium rounded-full blur-sm animate-pulse-glow" />
-
-                {/* Image container */}
-                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-background shadow-2xl">
-                  <img
-                    src="https://i.postimg.cc/MTjm4f1H/Chat-GPT-Image-Dec-10-2025-07-15-37-PM.png"
-                    alt="Thenith Ranjan P S"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Floating badges */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="absolute -right-4 top-1/4 glass-card px-4 py-3 rounded-xl shadow-lg"
-                >
-                  <p className="text-sm font-semibold">10+</p>
-                  <p className="text-xs text-muted-foreground">Projects</p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.9 }}
-                  className="absolute -left-4 bottom-1/4 glass-card px-4 py-3 rounded-xl shadow-lg"
-                >
-                  <p className="text-sm font-semibold">4+</p>
-                  <p className="text-xs text-muted-foreground">Internships</p>
-                </motion.div>
-              </div>
-            </motion.div>
+            {/* Empty Right Column: displays 3D room background clearly */}
+            <div className="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none min-h-[400px]" />
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-xs text-muted-foreground">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
-            <motion.div
-              animate={{ y: [0, isMobile ? 5 : 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-primary rounded-full"
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Resume Modal */}
