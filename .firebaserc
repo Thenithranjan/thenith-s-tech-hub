@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "portfolio-481be"
-  }
+  },
+  "targets": {
+    "portfolio-481be": {
+      "hosting": {
+        "TARGET_NAME": [
+          "SITE_ID"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
