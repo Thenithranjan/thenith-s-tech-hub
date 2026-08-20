@@ -63,11 +63,11 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4"
+                className="font-heading text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-4"
               >
                 Hello, I’m
                 <br />
-                <span className="text-[#3c14b7] dark:text-[#b48aff] drop-shadow-sm font-extrabold">
+                <span className="text-[#3c14b7] dark:text-[#b48aff] drop-shadow-sm font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
                   Thenith Ranjan P S
                 </span>
               </motion.h1>
