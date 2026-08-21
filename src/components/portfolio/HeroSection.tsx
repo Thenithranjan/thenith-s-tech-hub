@@ -40,9 +40,9 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="mb-[clamp(0.25rem,1vh,0.75rem)]"
+                  className="mb-[clamp(0.625rem,1.6vh,1rem)]"
                 >
-                  <span className="inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 bg-[#f0e8ff]/90 dark:bg-purple-950/90 backdrop-blur-md text-[#8232fb] dark:text-purple-300 rounded-full text-xs sm:text-[13px] font-semibold shadow-sm border border-purple-200/60 dark:border-purple-800/50">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#f0e8ff]/90 dark:bg-purple-950/90 backdrop-blur-md text-[#8232fb] dark:text-purple-300 rounded-full text-xs sm:text-sm font-semibold shadow-sm border border-purple-200/60 dark:border-purple-800/50">
                     👋 Welcome to my Portfolio
                   </span>
                 </motion.div>
@@ -52,11 +52,11 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="font-heading text-3xl sm:text-4xl lg:text-[clamp(2.25rem,3.1vw,3.25rem)] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-[clamp(0.25rem,1vh,0.625rem)]"
+                  className="font-heading text-4xl sm:text-5xl lg:text-[clamp(2.75rem,3.6vw,3.75rem)] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.28] mb-[clamp(0.75rem,2vh,1.25rem)]"
                 >
                   Hello, I’m
                   <br />
-                  <span className="text-[#8232fb] dark:text-[#a870ff] font-extrabold text-3xl sm:text-4xl lg:text-[clamp(2.25rem,3.1vw,3.25rem)]">
+                  <span className="text-[#8232fb] dark:text-[#a870ff] font-extrabold text-4xl sm:text-5xl lg:text-[clamp(2.75rem,3.6vw,3.75rem)] inline-block pt-2">
                     Thenith Ranjan P S
                   </span>
                 </motion.h1>
@@ -66,7 +66,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-xs sm:text-sm lg:text-[clamp(0.9375rem,1.1vw,1.125rem)] font-medium text-[#8232fb] dark:text-[#b486ff] leading-snug mb-[clamp(0.375rem,1.2vh,0.875rem)]"
+                  className="text-base sm:text-lg lg:text-[clamp(1.1rem,1.35vw,1.35rem)] font-semibold text-[#8232fb] dark:text-[#b486ff] leading-[1.85] mb-[clamp(0.875rem,2.4vh,1.5rem)]"
                 >
                   Full-Stack Developer | Web Developer | MuleSoft Developer | Tech Explorer
                 </motion.p>
@@ -76,7 +76,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-[clamp(0.8125rem,0.95vw,1rem)] max-w-md font-normal leading-relaxed mb-[clamp(0.5rem,1.5vh,1.25rem)]"
+                  className="text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-[clamp(1rem,1.2vw,1.2rem)] max-w-xl font-normal leading-[1.9] mb-[clamp(1.125rem,3vh,2.25rem)]"
                 >
                   A passionate Computer Science student dedicated to creating innovative web solutions and exploring the latest in technology.
                 </motion.p>
@@ -86,13 +86,13 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="flex flex-wrap items-center gap-3 sm:gap-3.5 mb-[clamp(0.5rem,1.5vh,1.25rem)]"
+                  className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-[clamp(1.75rem,4vh,2.75rem)]"
                 >
                   <button
                     onClick={() => setShowResume(true)}
-                    className="inline-flex items-center justify-center px-4.5 py-2.5 sm:px-5.5 sm:py-3 bg-[#8232fb] hover:bg-[#6f21e5] text-white text-xs sm:text-sm font-semibold rounded-2xl shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                    className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 lg:px-6.5 lg:py-3.25 bg-[#8232fb] hover:bg-[#6f21e5] text-white text-sm sm:text-base lg:text-[clamp(0.95rem,1.1vw,1.1rem)] font-semibold rounded-2xl shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
                   >
-                    <Eye className="mr-2 h-4 w-4 sm:h-4.5 sm:w-4.5" />
+                    <Eye className="mr-2 h-4.5 w-4.5 sm:h-5 sm:w-5" />
                     View Resume
                   </button>
 
@@ -100,10 +100,10 @@ export const HeroSection = () => {
                     onClick={() => {
                       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="inline-flex items-center justify-center px-4.5 py-2.5 sm:px-5.5 sm:py-3 bg-white dark:bg-slate-900 border-2 border-[#8232fb] dark:border-purple-400 text-[#8232fb] dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 text-xs sm:text-sm font-semibold rounded-2xl transition-all duration-200 shadow-sm"
+                    className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 lg:px-6.5 lg:py-3.25 bg-white dark:bg-slate-900 border-2 border-[#8232fb] dark:border-purple-400 text-[#8232fb] dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 text-sm sm:text-base lg:text-[clamp(0.95rem,1.1vw,1.1rem)] font-semibold rounded-2xl transition-all duration-200 shadow-sm"
                   >
                     Contact Me
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-4.5 sm:w-4.5" />
+                    <ArrowRight className="ml-2 h-4.5 w-4.5 sm:h-5 sm:w-5" />
                   </button>
                 </motion.div>
 
@@ -112,7 +112,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
-                  className="flex items-center gap-3.5"
+                  className="flex items-center gap-4 pt-1 sm:pt-2"
                 >
                   <span className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
                     Follow me:
