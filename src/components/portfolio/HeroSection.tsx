@@ -88,13 +88,15 @@ export const HeroSection = () => {
                   transition={{ delay: 0.6 }}
                   className="flex flex-wrap gap-4 mb-8"
                 >
-                  <button
-                    onClick={() => setShowResume(true)}
-                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-[#8232fb] hover:bg-[#6f21e5] text-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold h-12 rounded-xl px-8 text-base"
+                  <a
+                    href={resumePdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-[#8232fb] hover:bg-[#6f21e5] text-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold h-12 rounded-xl px-8 text-base cursor-pointer"
                   >
                     <Eye className="mr-2 h-5 w-5" />
                     View Resume
-                  </button>
+                  </a>
 
                   <button
                     onClick={() => {
