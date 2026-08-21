@@ -194,7 +194,7 @@ export const ScrollVideoAnimation: React.FC<ScrollVideoAnimationProps> = ({
       >
         {/* Instant Background Poster Visual */}
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+          className="absolute inset-0 z-0 bg-cover bg-[center_25%] pointer-events-none"
           style={{ backgroundImage: `url('${posterSrc}')` }}
         />
 
@@ -202,7 +202,7 @@ export const ScrollVideoAnimation: React.FC<ScrollVideoAnimationProps> = ({
         {!isReducedMotion && (
           <canvas
             ref={canvasRef}
-            className="absolute inset-0 w-full h-full object-cover z-[1] pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover object-[center_25%] z-[1] pointer-events-none"
           />
         )}
 

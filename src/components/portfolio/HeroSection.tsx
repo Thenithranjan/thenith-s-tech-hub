@@ -26,23 +26,23 @@ export const HeroSection = () => {
       <section id="home" className="relative w-full">
         <ScrollVideoAnimation videoSrc="/portfolio-animation.mp4" posterSrc="/home-bg.png">
           {/* Main Content Area */}
-          <div className="container-custom min-h-[calc(100vh-60px)] flex items-center pt-20 pb-8 relative z-10">
-            <div className="grid lg:grid-cols-12 gap-8 items-center w-full px-4 md:px-8">
+          <div className="container-custom h-full flex flex-col justify-between pt-[clamp(4.5rem,7.5vh,5.5rem)] pb-[clamp(0.75rem,2vh,1.5rem)] relative z-10">
+            <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center w-full px-2 sm:px-4 md:px-6 my-auto pt-2 md:pt-4">
               {/* Left Content Column */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center"
+                className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center max-w-xl"
               >
                 {/* Welcome Badge */}
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="mb-5"
+                  className="mb-[clamp(0.375rem,1.2vh,0.875rem)]"
                 >
-                  <span className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-[#e4d7fe]/90 dark:bg-purple-900/90 backdrop-blur-md text-[#3c17a6] dark:text-purple-100 rounded-full text-base sm:text-lg font-bold shadow-md border border-purple-200/60 dark:border-purple-500/50">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#f0e8ff]/90 dark:bg-purple-950/90 backdrop-blur-md text-[#8232fb] dark:text-purple-300 rounded-full text-xs sm:text-sm font-semibold shadow-sm border border-purple-200/60 dark:border-purple-800/50">
                     👋 Welcome to my Portfolio
                   </span>
                 </motion.div>
@@ -52,11 +52,11 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-[4rem] font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4"
+                  className="font-heading text-3xl sm:text-4xl lg:text-[clamp(2.5rem,3.4vw,3.5rem)] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-[clamp(0.375rem,1.2vh,0.75rem)]"
                 >
                   Hello, I’m
                   <br />
-                  <span className="text-[#3c14b7] dark:text-[#b48aff] drop-shadow-sm font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] whitespace-nowrap">
+                  <span className="text-[#8232fb] dark:text-[#a870ff] font-extrabold text-3xl sm:text-4xl lg:text-[clamp(2.5rem,3.4vw,3.5rem)]">
                     Thenith Ranjan P S
                   </span>
                 </motion.h1>
@@ -66,7 +66,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-extrabold text-[#3c14b7] dark:text-[#c4a1ff] leading-snug mb-4"
+                  className="text-sm sm:text-base lg:text-[clamp(1rem,1.2vw,1.25rem)] font-medium text-[#8232fb] dark:text-[#b486ff] leading-snug mb-[clamp(0.5rem,1.5vh,1rem)]"
                 >
                   Full-Stack Developer | Web Developer | MuleSoft Developer | Tech Explorer
                 </motion.p>
@@ -76,7 +76,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="text-slate-700 dark:text-slate-200 text-lg md:text-xl lg:text-2xl max-w-2xl font-medium leading-relaxed mb-8"
+                  className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-[clamp(0.875rem,1vw,1.125rem)] max-w-lg font-normal leading-relaxed mb-[clamp(0.75rem,2vh,1.5rem)]"
                 >
                   A passionate Computer Science student dedicated to creating innovative web solutions and exploring the latest in technology.
                 </motion.p>
@@ -86,13 +86,13 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="flex flex-wrap items-center gap-5 mb-8"
+                  className="flex flex-wrap items-center gap-3 sm:gap-4 mb-[clamp(0.75rem,2vh,1.5rem)]"
                 >
                   <button
                     onClick={() => setShowResume(true)}
-                    className="inline-flex items-center justify-center px-7 py-4 bg-[#4717cc] hover:bg-[#380fa8] dark:bg-[#6b2bf5] dark:hover:bg-[#5821d6] text-white text-lg md:text-xl font-bold rounded-2xl shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                    className="inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3.5 bg-[#8232fb] hover:bg-[#6f21e5] text-white text-sm sm:text-base font-semibold rounded-2xl shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
                   >
-                    <Eye className="mr-2.5 h-6 w-6" />
+                    <Eye className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     View Resume
                   </button>
 
@@ -100,10 +100,10 @@ export const HeroSection = () => {
                     onClick={() => {
                       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="inline-flex items-center justify-center px-7 py-4 border-2 border-[#4717cc] dark:border-purple-400 text-[#4717cc] dark:text-purple-200 hover:bg-[#4717cc]/10 dark:hover:bg-purple-400/20 text-lg md:text-xl font-bold rounded-2xl transition-all duration-200"
+                    className="inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3.5 bg-white dark:bg-slate-900 border-2 border-[#8232fb] dark:border-purple-400 text-[#8232fb] dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 text-sm sm:text-base font-semibold rounded-2xl transition-all duration-200 shadow-sm"
                   >
                     Contact Me
-                    <ArrowRight className="ml-2.5 h-6 w-6" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </button>
                 </motion.div>
 
@@ -114,7 +114,7 @@ export const HeroSection = () => {
                   transition={{ delay: 0.7 }}
                   className="flex items-center gap-4"
                 >
-                  <span className="text-base md:text-lg font-bold text-slate-700 dark:text-slate-300">
+                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
                     Follow me:
                   </span>
                   <div className="flex items-center gap-3">
@@ -122,38 +122,38 @@ export const HeroSection = () => {
                       href="https://linkedin.com/in/thenith-ranjan-p-s-430aa0312"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
+                      className="w-9 h-9 rounded-full bg-[#f2e9ff] dark:bg-slate-800 text-[#8232fb] dark:text-purple-300 shadow-sm hover:shadow-md hover:scale-110 flex items-center justify-center transition-all duration-200"
                       title="LinkedIn"
                     >
-                      <Linkedin size={18} />
+                      <Linkedin size={17} />
                     </a>
                     <a
                       href="https://github.com/Thenithranjan"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
+                      className="w-9 h-9 rounded-full bg-[#f2e9ff] dark:bg-slate-800 text-[#8232fb] dark:text-purple-300 shadow-sm hover:shadow-md hover:scale-110 flex items-center justify-center transition-all duration-200"
                       title="GitHub"
                     >
-                      <Github size={18} />
+                      <Github size={17} />
                     </a>
                     <a
                       href="mailto:thenithranjan@gmail.com"
-                      className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
+                      className="w-9 h-9 rounded-full bg-[#f2e9ff] dark:bg-slate-800 text-[#8232fb] dark:text-purple-300 shadow-sm hover:shadow-md hover:scale-110 flex items-center justify-center transition-all duration-200"
                       title="Email"
                     >
-                      <Mail size={18} />
+                      <Mail size={17} />
                     </a>
                     <a
                       href="https://leetcode.com/u/Thenithranjan/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 text-[#4717cc] dark:text-purple-300 shadow-md hover:shadow-lg hover:scale-110 flex items-center justify-center transition-all duration-200 border border-purple-100 dark:border-slate-700"
+                      className="w-9 h-9 rounded-full bg-[#f2e9ff] dark:bg-slate-800 text-[#8232fb] dark:text-purple-300 shadow-sm hover:shadow-md hover:scale-110 flex items-center justify-center transition-all duration-200"
                       title="LeetCode"
                     >
                       <svg
                         viewBox="0 0 24 24"
-                        width={18}
-                        height={18}
+                        width={17}
+                        height={17}
                         fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -165,8 +165,27 @@ export const HeroSection = () => {
               </motion.div>
 
               {/* Empty Right Column: displays 3D room video background clearly */}
-              <div className="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none min-h-[400px]" />
+              <div className="hidden lg:block lg:col-span-5 xl:col-span-6 pointer-events-none min-h-[300px]" />
             </div>
+
+            {/* Scroll Down Indicator */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="hidden sm:flex flex-col items-center gap-1 self-center mx-auto mb-[clamp(0.25rem,1.5vh,1rem)] pointer-events-none z-20"
+            >
+              <span className="text-xs font-bold text-[#8232fb] dark:text-purple-300 tracking-wider uppercase bg-white/80 dark:bg-slate-900/80 px-3 py-0.5 rounded-full shadow-sm backdrop-blur-md border border-purple-200/60 dark:border-purple-800/60">
+                Scroll Down
+              </span>
+              <div className="w-6 h-10 rounded-full border-2 border-[#8232fb] dark:border-purple-400 bg-white/80 dark:bg-slate-900/80 shadow-md backdrop-blur-md flex justify-center pt-2">
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  className="w-2 h-2 rounded-full bg-[#8232fb] dark:bg-purple-300 shadow-sm"
+                />
+              </div>
+            </motion.div>
           </div>
         </ScrollVideoAnimation>
       </section>
