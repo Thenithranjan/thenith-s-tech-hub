@@ -18,7 +18,7 @@ export const HeroSection = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const resumeImageUrl = "https://i.postimg.cc/L6Cm0DDv/RESUME-1.png";
+  const resumeImageUrl = "/resume/resume-preview.png";
   const resumePdfUrl = "/resume/Thenith_Ranjan_Resume.pdf";
 
   return (
@@ -33,16 +33,16 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center max-w-lg"
+                className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center max-w-xl"
               >
                 {/* Welcome Badge */}
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="mb-[clamp(0.625rem,1.6vh,1rem)]"
+                  className="mb-4"
                 >
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#f0e8ff]/90 dark:bg-purple-950/90 backdrop-blur-md text-[#8232fb] dark:text-purple-300 rounded-full text-xs sm:text-sm font-semibold shadow-sm border border-purple-200/60 dark:border-purple-800/50">
+                  <span className="inline-block px-3.5 py-1 bg-[#f0e8ff]/90 dark:bg-purple-950/90 backdrop-blur-md text-[#8232fb] dark:text-purple-300 rounded-full text-xs sm:text-sm font-medium border border-purple-200/60 dark:border-purple-800/50">
                     👋 Welcome to my Portfolio
                   </span>
                 </motion.div>
@@ -52,11 +52,11 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="font-heading text-4xl sm:text-5xl lg:text-[clamp(2.75rem,3.6vw,3.75rem)] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.28] mb-[clamp(0.75rem,2vh,1.25rem)]"
+                  className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.3] mb-5"
                 >
                   Hello, I’m
                   <br />
-                  <span className="text-[#8232fb] dark:text-[#a870ff] font-extrabold text-4xl sm:text-5xl lg:text-[clamp(2.75rem,3.6vw,3.75rem)] inline-block pt-2">
+                  <span className="text-[#8232fb] dark:text-[#a870ff] whitespace-nowrap inline-block pt-3">
                     Thenith Ranjan P S
                   </span>
                 </motion.h1>
@@ -66,7 +66,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-base sm:text-lg lg:text-[clamp(1.1rem,1.35vw,1.35rem)] font-semibold text-[#8232fb] dark:text-[#b486ff] leading-[1.85] mb-[clamp(0.875rem,2.4vh,1.5rem)]"
+                  className="text-lg md:text-xl text-[#8232fb] dark:text-[#b486ff] font-medium mb-4"
                 >
                   Full-Stack Developer | Web Developer | MuleSoft Developer | Tech Explorer
                 </motion.p>
@@ -76,7 +76,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-[clamp(1rem,1.2vw,1.2rem)] max-w-xl font-normal leading-[1.9] mb-[clamp(1.125rem,3vh,2.25rem)]"
+                  className="text-slate-600 dark:text-slate-300 text-lg max-w-lg mb-8 font-normal"
                 >
                   A passionate Computer Science student dedicated to creating innovative web solutions and exploring the latest in technology.
                 </motion.p>
@@ -86,13 +86,13 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-[clamp(1.75rem,4vh,2.75rem)]"
+                  className="flex flex-wrap gap-4 mb-8"
                 >
                   <button
                     onClick={() => setShowResume(true)}
-                    className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 lg:px-6.5 lg:py-3.25 bg-[#8232fb] hover:bg-[#6f21e5] text-white text-sm sm:text-base lg:text-[clamp(0.95rem,1.1vw,1.1rem)] font-semibold rounded-2xl shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-[#8232fb] hover:bg-[#6f21e5] text-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-semibold h-12 rounded-xl px-8 text-base"
                   >
-                    <Eye className="mr-2 h-4.5 w-4.5 sm:h-5 sm:w-5" />
+                    <Eye className="mr-2 h-5 w-5" />
                     View Resume
                   </button>
 
@@ -100,10 +100,10 @@ export const HeroSection = () => {
                     onClick={() => {
                       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 lg:px-6.5 lg:py-3.25 bg-white dark:bg-slate-900 border-2 border-[#8232fb] dark:border-purple-400 text-[#8232fb] dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 text-sm sm:text-base lg:text-[clamp(0.95rem,1.1vw,1.1rem)] font-semibold rounded-2xl transition-all duration-200 shadow-sm"
+                    className="inline-flex items-center justify-center gap-2 whitespace-nowrap border-2 border-[#8232fb] dark:border-purple-400 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm text-[#8232fb] dark:text-purple-300 hover:bg-[#8232fb] hover:text-white dark:hover:bg-purple-950/80 font-semibold h-12 rounded-xl px-8 text-base transition-all duration-300 shadow-sm"
                   >
                     Contact Me
-                    <ArrowRight className="ml-2 h-4.5 w-4.5 sm:h-5 sm:w-5" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </button>
                 </motion.div>
 
@@ -112,12 +112,12 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
-                  className="flex items-center gap-4 pt-1 sm:pt-2"
+                  className="flex items-center gap-4"
                 >
-                  <span className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
+                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
                     Follow me:
                   </span>
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex gap-3">
                     <a
                       href="https://linkedin.com/in/thenith-ranjan-p-s-430aa0312"
                       target="_blank"
